@@ -12,7 +12,7 @@ risk.
 ## Usage
 
 ```
-ntpp listen\_port upstream\_ntp\_server\_ip upstream\_ntp\_server\_port offset\_seconds
+ntpp listen_port upstream_ntp_server_ip upstream_ntp_server_port offset_seconds
 ```
 
 See the man page for details.
