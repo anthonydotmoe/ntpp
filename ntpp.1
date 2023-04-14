@@ -1,0 +1,44 @@
+.TH ntpp 1 "13 April 2023" "version 1.0" "ntpp Manual"
+.SH NAME
+ntpp \- NTP proxy with custom offset
+
+.SH SYNOPSIS
+.B ntpp 
+.I listen_port
+.I upstream_ntp_server_ip
+.I upstream_ntp_server_port 
+.I offset_seconds
+
+.SH DESCRIPTION
+.B ntpp is a simple NTP proxy that listens for NTP queries, forwards them to an
+upstream NTP server, applies the specified offset to the response, and sends the
+modified response back to the original client.
+
+.SH OPTIONS
+.IP listen_port
+The port on which the NTP proxy will listen for incoming NTP queries.
+
+.IP upstream_ntp_server_ip
+The IP address of the upstream NTP server to which the NTP queries will be
+forwarded.
+
+.IP upstream_ntp_server_port
+The port of the upstream NTP server to which the NTP queries will be forwarded.
+
+.IP offset_seconds
+The number of seconds to be added or subtracted from the NTP server's response.
+A positive value will advance the time, while a negative value will set the time
+back.
+
+.SH EXAMPLES
+To run the NTP proxy with a listen port of 123, an upstream NTP server IP of
+192.168.1.1, an upstream NTP server port of 123, and an offset of 10800 seconds,
+use the following command:
+
+.B ntpp 123 192.168.1.1 123 10800
+
+.SH BUGS
+Report bugs to <anthony@anthony.moe> or submit an issue on GitHub
+
+.SH AUTHOR
+ntpp was written by Anthony Guerrero <anthony@anthony.moe>.
